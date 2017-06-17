@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">bs</string>
+    <string name = "login_forget">忘记密码?</string>
+</resources>
