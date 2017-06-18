@@ -32,7 +32,7 @@ public class App extends Application{
         super.onCreate();
         instance = this;
 
-        //初始化屏幕宽高
+
 
         //初始化数据库
         Realm.init(getApplicationContext());
