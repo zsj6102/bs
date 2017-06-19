@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.ouyiku.bs.ui.loginView.MainActivity">
+    android:fitsSystemWindows="true"
+    android:background="@drawable/login_bg"
+    tools:context="com.ouyiku.bs.ui.login.LoginActivity">
 
-    <RelativeLayout
+    <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="212px">
@@ -16,15 +18,15 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:src="@mipmap/login_img" />
-    </RelativeLayout>
+    </com.zhy.autolayout.AutoRelativeLayout>
 
-    <LinearLayout
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="100px"
         android:layout_marginTop="212px"
         android:orientation="horizontal"
         >
-        <RelativeLayout
+        <com.zhy.autolayout.AutoRelativeLayout
             android:gravity="center"
             android:layout_width="100px"
             android:layout_height="100px"
@@ -34,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/user_login"/>
-        </RelativeLayout>
+        </com.zhy.autolayout.AutoRelativeLayout>
         <EditText
             android:id="@+id/phone"
             android:layout_gravity="center_vertical"
@@ -47,19 +49,19 @@
             android:textSize="32px"
             />
 
-    </LinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
     <View android:layout_height="1px"
         android:layout_width="match_parent"
         android:layout_marginRight="20px"
         android:layout_marginLeft="20px"
         android:background="#ffaebb"
         />
-    <LinearLayout
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="100px"
         android:orientation="horizontal"
         >
-        <RelativeLayout
+        <com.zhy.autolayout.AutoRelativeLayout
             android:gravity="center"
             android:layout_width="100px"
             android:layout_height="100px"
@@ -70,7 +72,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/login_pwd"/>
-        </RelativeLayout>
+        </com.zhy.autolayout.AutoRelativeLayout>
         <EditText
             android:id="@+id/pwd"
             android:layout_gravity="center_vertical"
@@ -82,19 +84,20 @@
             android:textColorHint="#cccccc"
             android:textSize="32px"
             android:layout_weight="1" />
-        <RelativeLayout
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/password"
             android:gravity="center"
             android:layout_width="100px"
             android:layout_height="100px"
             android:layout_marginRight="20px"
             >
             <ImageView
-
+                android:id="@+id/pwdView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/password_cover_ico"/>
-        </RelativeLayout>
-    </LinearLayout>
+        </com.zhy.autolayout.AutoRelativeLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
     <View android:layout_height="1px"
         android:layout_width="match_parent"
         android:layout_marginRight="20px"
@@ -111,8 +114,9 @@
         android:text="登录"
         android:textSize="32px"
         android:textColor="#ffffff"
-        android:background="@drawable/button_bg"/>
+        android:background="@drawable/btnlogin_bg"/>
     <TextView
+        android:id="@+id/forgetPwd"
         android:layout_marginTop="20px"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -121,4 +125,4 @@
         android:textColor="@color/forgertPwd"
         android:text="@string/login_forget"/>
 
-</LinearLayout>
+</com.zhy.autolayout.AutoLinearLayout>

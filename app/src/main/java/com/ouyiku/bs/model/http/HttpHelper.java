@@ -1,5 +1,6 @@
 package com.ouyiku.bs.model.http;
 
+import com.ouyiku.bs.model.bean.ChangPwdBean;
 import com.ouyiku.bs.model.bean.LoginBean;
 
 import io.reactivex.Flowable;
@@ -10,4 +11,5 @@ import io.reactivex.Flowable;
 
 public interface HttpHelper {
     Flowable<LoginBean> getUserInfo(String url,String c,String a,String phone,String pwd);
+    Flowable<ChangPwdBean> getSmsInfo(String url,String c,String a,String phone);
 }

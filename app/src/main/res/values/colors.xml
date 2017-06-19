@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="toast_bg">#dddfe0</color>
+    <color name="activity_bg">#fafafa</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="mainColor">#f84e69</color>
     <color name="forgertPwd">#ff667e</color>
+    <color name="comui_tab_text_color">#929292</color>
+    <color name="tab_text_normal">#212121</color>
+    <color name = "white">#ffffff</color>
+    <color name = "view_top">#ea4862</color>
+    <color name = "view_bot">#f4f4f4</color>
 </resources>

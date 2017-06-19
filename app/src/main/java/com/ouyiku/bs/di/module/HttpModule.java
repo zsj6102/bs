@@ -3,7 +3,9 @@ package com.ouyiku.bs.di.module;
 import com.ouyiku.bs.BuildConfig;
 import com.ouyiku.bs.Util.SystemUtil;
 import com.ouyiku.bs.app.Constants;
+import com.ouyiku.bs.di.qualifier.ChangeUrl;
 import com.ouyiku.bs.di.qualifier.LoginUrl;
+import com.ouyiku.bs.model.http.api.ChangePwdApi;
 import com.ouyiku.bs.model.http.api.LoginApi;
 
 import java.io.File;
@@ -46,6 +48,12 @@ public class HttpModule {
     @Provides
     @LoginUrl
     Retrofit provideZhihuRetrofit(Retrofit.Builder builder, OkHttpClient client) {
+        return createRetrofit(builder, client, LoginApi.HOST);
+    }
+    @Singleton
+    @Provides
+    @ChangeUrl
+    Retrofit provideChangeRetrofit(Retrofit.Builder builder, OkHttpClient client) {
         return createRetrofit(builder, client, LoginApi.HOST);
     }
     @Singleton
@@ -114,6 +122,11 @@ public class HttpModule {
     @Provides
     LoginApi privateLoginApi(@LoginUrl Retrofit retrofit) {
         return retrofit.create(LoginApi.class);
+    }
+    @Singleton
+    @Provides
+    ChangePwdApi privateChangeApi(@LoginUrl Retrofit retrofit) {
+        return retrofit.create(ChangePwdApi.class);
     }
     private Retrofit createRetrofit(Retrofit.Builder builder, OkHttpClient client, String url) {
         return builder

@@ -16,19 +16,18 @@ import io.reactivex.functions.Consumer;
 
 public class LoginPresenter  extends RxPresenter<LoginContract.View> implements LoginContract.Presenter{
     private DataManager mDataManager;
-    private String suc;
+
     @Inject
     public LoginPresenter(DataManager dataManager){
         this.mDataManager = dataManager;
     }
     @Override
-    public void getLoginData() {
-        addSubscribe(mDataManager.getUserInfo("http://a.ouyiku.com/","Seller","login","13015559826","wanmei888")
+    public void getLoginData(String phone,String pwd) {
+        addSubscribe(mDataManager.getUserInfo("http://a.ouyiku.com/","Seller","login",phone,pwd)
                         .compose(RxUtil.<LoginBean>rxSchedulerHelper())
                         .subscribe(new Consumer<LoginBean>() {
                             @Override
                             public void accept(LoginBean welcomeBean) {
-                                suc = welcomeBean.getStatus().getSucceed();
                                 mView.showContent(welcomeBean);
 //                                startCountDown();
                             }

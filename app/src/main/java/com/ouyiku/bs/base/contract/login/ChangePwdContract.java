@@ -2,17 +2,17 @@ package com.ouyiku.bs.base.contract.login;
 
 import com.ouyiku.bs.base.BasePresenter;
 import com.ouyiku.bs.base.BaseView;
-import com.ouyiku.bs.model.bean.LoginBean;
+import com.ouyiku.bs.model.bean.ChangPwdBean;
 
 /**
- * Created by Administrator on 2017/6/17 0017.
+ * Created by Administrator on 2017/6/19 0019.
  */
 
-public interface LoginContract {
+public interface ChangePwdContract {
     interface View extends BaseView {
-        void showContent(LoginBean bean);
+         void showResult(ChangPwdBean bean);
     }
     interface Presenter extends BasePresenter<View>{
-        void getLoginData(String phone,String pwd);
+        void getSms(String phone);
     }
 }
